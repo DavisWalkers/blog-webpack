@@ -14,7 +14,7 @@ import { Button, Container, ErrorBody, ErrorTitle, Form, Header, Section, Styled
 export const EditPost = () => {
   const params: any = useParams();
   const id = parseInt(params['id']);
-  const post = useSelector(postsSelector).filter((post: Post) => { 
+  const post = useSelector(postsSelector).filter((post: Post) => {
     return post.id === id;
   })[0];
   const dispatch = useDispatch();
@@ -50,60 +50,60 @@ export const EditPost = () => {
     <Section>
       <Container>
         <Header>Edit post</Header>
-        {!!post && 
-          <Formik 
+        {!!post &&
+          <Formik
             initialValues={{ title: post.title, body: post.body }}
             validationSchema={formSchema}
             onSubmit={values => {
               updatePostObject(values.title, values.body);
             }}
           >
-          {({
-            values,
-            errors,
-            handleChange,
-            handleBlur,
-            handleSubmit,
-          }) => (
-          <Form onSubmit={handleSubmit}>
-            {errors.title && 
-              <ErrorTitle>
-                {errors.title}
-              </ErrorTitle>}
-            <StyledInput
-              className='edit-post__input'
-              placeholder='Title'
-              id='title'
-              name='title'
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.title}
-            >
-              {post.title}
-            </StyledInput>
-            <StyledInput
-              className='edit-post__input'
-              placeholder='Body'
-              id='body'
-              minRows={4}
-              name='body'
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.body}
-            >
-              {post.body}
-            </StyledInput>
-            {errors.body && 
-              <ErrorBody>
-                {errors.body}
-              </ErrorBody>}
-            <Button 
-              type='submit' 
-            >
-              Submit
+            {({
+              values,
+              errors,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+            }) => (
+              <Form onSubmit={handleSubmit}>
+                {errors.title &&
+                  <ErrorTitle>
+                    {errors.title}
+                  </ErrorTitle>}
+                <StyledInput
+                  className='edit-post__input'
+                  placeholder='Title'
+                  id='title'
+                  name='title'
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.title}
+                >
+                  {post.title}
+                </StyledInput>
+                <StyledInput
+                  className='edit-post__input'
+                  placeholder='Body'
+                  id='body'
+                  minRows={4}
+                  name='body'
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.body}
+                >
+                  {post.body}
+                </StyledInput>
+                {errors.body &&
+                  <ErrorBody>
+                    {errors.body}
+                  </ErrorBody>}
+                <Button
+                  type='submit'
+                >
+                  Submit
             </Button>
-          </Form>)}
-        </Formik>}
+              </Form>)}
+          </Formik>}
         {!post && <Redirect to='/' />}
       </Container>
     </Section>

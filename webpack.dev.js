@@ -11,7 +11,7 @@ module.exports = merge(commonConfigWebpack, {
     host: 'localhost',
     port: '8000',
     contentBase: path.resolve(__dirname, 'public'),
-    publicPath: '/js',
+    publicPath: '/',
     historyApiFallback: true,
     open: false,
   },

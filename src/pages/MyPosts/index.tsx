@@ -10,7 +10,7 @@ export const MyPosts = () => {
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, []);
- 
+
   return (
     <Section>
       <Container>

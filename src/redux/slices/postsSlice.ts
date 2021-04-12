@@ -5,13 +5,13 @@ const initialState: Post[] = [
   {
     id: 0,
     title: 'Fetching',
-    body: 'Fetching', 
+    body: 'Fetching',
     img: 'https://picsum.photos/500/800?sig=0'
   },
   {
     id: 1,
     title: 'Fetching',
-    body: 'Fetching', 
+    body: 'Fetching',
     img: 'https://picsum.photos/500/800?sig=1'
   }
 ];
@@ -23,7 +23,7 @@ const postsSlice = createSlice({
     addPost(state, action) {
       state.push(action.payload);
     },
-    retrievePosts(state, action) {      
+    retrievePosts(state, action) {
       return action.payload;
     },
     uppendPosts(state, action) {

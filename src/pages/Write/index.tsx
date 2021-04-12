@@ -36,7 +36,7 @@ export const Write = () => {
     <Section>
       <Container>
         <Header>Tell us your thoughts</Header>
-        <Formik 
+        <Formik
           initialValues={{ title: '', body: '' }}
           validationSchema={formSchema}
           onSubmit={(values, { resetForm }) => {
@@ -44,47 +44,47 @@ export const Write = () => {
             resetForm({});
           }}
         >
-        {({
-         values,
-         errors,
-         handleChange,
-         handleBlur,
-         handleSubmit,
-         isSubmitting,
-       }) => (
-          <Form onSubmit={handleSubmit}>
-            {errors.title && 
-              <ErrorTitle>
-                {errors.title}
-              </ErrorTitle>}
-            <StyledInput
-              placeholder='Title'
-              id='title'
-              name='title'
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.title}
-            />
-            <StyledInput
-              placeholder='Body'
-              minRows={6}
-              id='body'
-              name='body'
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.body}
-            />
-            {errors.body && 
-              <ErrorBody>
-                {errors.body}
-              </ErrorBody>}
-            <Button  
-              type='submit' 
-              disabled={isSubmitting}
-            >
-              Post
+          {({
+            values,
+            errors,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting,
+          }) => (
+            <Form onSubmit={handleSubmit}>
+              {errors.title &&
+                <ErrorTitle>
+                  {errors.title}
+                </ErrorTitle>}
+              <StyledInput
+                placeholder='Title'
+                id='title'
+                name='title'
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.title}
+              />
+              <StyledInput
+                placeholder='Body'
+                minRows={6}
+                id='body'
+                name='body'
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.body}
+              />
+              {errors.body &&
+                <ErrorBody>
+                  {errors.body}
+                </ErrorBody>}
+              <Button
+                type='submit'
+                disabled={isSubmitting}
+              >
+                Post
             </Button>
-          </Form>)}
+            </Form>)}
         </Formik>
       </Container>
     </Section>

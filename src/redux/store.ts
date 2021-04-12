@@ -31,7 +31,7 @@ export const store = configureStore({
     isFetching: isFetchingReducer,
     isLoadingMore: isLoadingMoreReducer,
   }
-}); 
+});
 
 const pageId = 1;
 loadInitialData(pageId);

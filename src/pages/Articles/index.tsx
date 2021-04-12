@@ -12,7 +12,7 @@ export const Articles = () => {
   const setObserver = (observer: IntersectionObserver, ref: HTMLDivElement) => {
     observer.observe(ref);
   };
-  
+
   const callback = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
     entries.forEach(entry => {
       if (entry.intersectionRatio === 1) {
@@ -20,7 +20,7 @@ export const Articles = () => {
       }
     });
   };
-  
+
   const observer = new IntersectionObserver(callback, options);
 
   useEffect(() => {

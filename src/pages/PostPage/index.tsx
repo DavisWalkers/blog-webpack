@@ -33,7 +33,7 @@ export const PostPage = () => {
       <Container>
         <ImageWrapper>
           {!!isFetching && <Loader />}
-          {!isFetching && 
+          {!isFetching &&
             <Image
               src={currentPost.img}
               alt='Post visual content'
@@ -43,10 +43,10 @@ export const PostPage = () => {
           {currentPost.title}
         </Header>
         <Description>
-          {currentPost.body}  
+          {currentPost.body}
         </Description>
         <Separator />
-        {!!isUserPost && 
+        {!!isUserPost &&
           <ButtonsWrapper>
             <DeletePostButton id={id} />
             <WrapperSeparator />
